@@ -1,4 +1,4 @@
-import java.sql.Statement;
+import java.util.Scanner;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -35,9 +35,17 @@ public class HelloWorld {
 //        y-=x;
 //        System.out.println(x);
 //        System.out.println(y);
-        byte b;
-        b=(byte)129;
-        System.out.println(b);
-
+//        byte b;
+//        b=(byte)129;
+//        System.out.println(b);
+//        String name = "Denzel";
+//        String lastName = "Britton";
+//        System.out.printf("Hello there, %s %n%s. Nice to see you.%n", name, lastName);
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.print("Enter something: ");
+//        String userInput = scanner.nextLine();
+//
+//        System.out.println("You entered: --> \"" + userInput + "\" <--");
     }
 }
