@@ -22,7 +22,7 @@ public class MethodsExercises {
 
 //
 //
-        factorial();
+        factorial(1,10);
 
         rollDice();
 
@@ -64,10 +64,9 @@ public static String tryAgain() {
             int userInput1 = scanner.nextInt();
 
             if (userInput1 >= min && userInput1 <= max) {
-                System.out.println("Congrats your in range");
+                System.out.print("Congrats your in range");
                 return userInput1;
-            }
-                return  getInteger(min, max, tryAgain());
+            }return  getInteger(min, max, tryAgain());
 
     }
 
@@ -78,22 +77,27 @@ public static String tryAgain() {
 //    Use the long type to store the factorial.
 //    Continue only if the user agrees to.
 
-    public static void factorial() {
+    public static void factorial(int min, int max) {
         Scanner scanner = new Scanner(System.in);
         String choice;
         do {
             System.out.print("Enter a number between 1 and 10: ");
             long userNum = scanner.nextInt();
             long fac = 1;
+            if (userNum >= min && userNum <= max){
             for (long i = 1; i <= userNum; ++i) {
                 // factorial = factorial * i; this the condition and i increments and factorial
                 //
                 fac *= i;
 
             }
-            System.out.printf("Factorial of %d = %d %n", userNum, fac);
+            System.out.printf("Factorial of %d = %d %n", userNum, fac);}
+            else {
+                factorial(min, max);
+            }
             System.out.println("Do you want to continue? (y/n):");
             choice = scanner.next();
+
 
         } while (!choice.equalsIgnoreCase("n"));
 
@@ -127,6 +131,7 @@ public static String tryAgain() {
 
     }
 }
+
 
 
 
