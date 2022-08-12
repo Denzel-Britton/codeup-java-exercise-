@@ -47,5 +47,9 @@ public class HelloWorld {
 //        String userInput = scanner.nextLine();
 //
 //        System.out.println("You entered: --> \"" + userInput + "\" <--");
+
+            int x = 5;
+            System.out.println(x > 2 ? x < 4 ? 10 : 8 : 7);
+
     }
 }
