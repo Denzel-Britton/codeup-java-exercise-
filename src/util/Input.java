@@ -7,7 +7,7 @@ public class Input {
 
 //// methods
     public String getString(){
-        System.out.println("Get String!");
+//        System.out.println("Get String!");
         return scanner.nextLine();
     }
     public void clear() {
@@ -23,9 +23,19 @@ public class Input {
     }
 
     public int getInt(){
-        System.out.println("get Integer");
-        return scanner.nextInt();
+
+
+        String userInput = getString();  //setting user input to get string method
+        try {
+            return Integer.parseInt(userInput);
+        }catch (NumberFormatException e){
+            System.out.println("sorry needs to be a integer ");
+        }
+        return getInt();
     }
+    //        return scanner.nextInt();
+
+
     public int getInt( int min, int max){
         System.out.printf("Get whole numbers between %s and %s", min, max);
         int userInput = scanner.nextInt();
@@ -37,8 +47,24 @@ public class Input {
         }
     }
     public double getDouble(){
-        System.out.println("Enter a number please");
-        return scanner.nextDouble();
+//        System.out.println("Enter a number please");
+//        return scanner.nextDouble();
+//        try {
+//            int  lookingFoNum = Integer.parseInt(); // parsing for a number
+//            return lookingFoNum;
+//        }catch (NumberFormatException e){
+//            System.out.println("sorry needs to be a integer");
+//        }
+//        return 0;
+        String userWrite = getString();  //setting user input to get string method
+        try {
+            return Double.parseDouble(userWrite);
+
+        }catch (NumberFormatException e){
+            System.out.println("sorry needs to be a integer ");
+        }
+        return getDouble();
+
     }
     public double getDouble(double min, double max){
         System.out.printf("Get whole numbers between %f and %f\n", min, max);
