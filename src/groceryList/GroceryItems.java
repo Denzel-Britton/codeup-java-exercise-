@@ -1,11 +1,11 @@
 package groceryList;
 
-    public class  groceryItems  {
+    public class GroceryItems {
         private  String name;
         private  int quantity;
         private final String category;
 
-        public  groceryItems(String category, String name, int quantity){
+        public GroceryItems(String category, String name, int quantity){
             this.name = name;
             this.quantity = quantity;
             this.category = category;

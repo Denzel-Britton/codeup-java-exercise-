@@ -5,8 +5,10 @@ public class maintest {
 
     public static void main(String[] args) {
         Input input = new Input();
-        double t = input.getDouble();
+        double t = input.getDouble(1,5);
         System.out.println(t);
+
+
 
 //        String str = "123.45";
 //        Double d = Double.valueOf(str); // returns Double object

@@ -5,10 +5,9 @@ import util.Input;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 
 public class GroceryListApplication {
-    public static ArrayList< groceryItems> shoppingList = new ArrayList<>();
+    private static ArrayList<GroceryItems> shoppingList = new ArrayList<>();
 
     public static void main(String[] args){
         System.out.println("Hello user.  Would you like to create a grocery list?");
@@ -51,7 +50,7 @@ public class GroceryListApplication {
         System.out.print("Enter item name to be edited: ");
         String item = input.getString();
         int index = -1;
-        for( groceryItems it: shoppingList){
+        for( GroceryItems it: shoppingList){
             if(it.getName().equals(item)){
                 index = 1;
                 System.out.println("Found item. Editing item: ");
@@ -74,7 +73,7 @@ public class GroceryListApplication {
         String name = input.getString();
         System.out.println("Please enter amount to buy: ");
         int amount = input.getInt();
-        shoppingList.add(new  groceryItems("greens", name, amount));
+        shoppingList.add(new GroceryItems("greens", name, amount));
     }
 
     public static void addToDrinks(){
@@ -83,7 +82,7 @@ public class GroceryListApplication {
         String name = input.getString();
         System.out.println("Please enter amount to buy: ");
         int amount = input.getInt();
-        shoppingList.add(new  groceryItems("drinks", name, amount));
+        shoppingList.add(new GroceryItems("drinks", name, amount));
     }
 
     public static void addToEntrees(){
@@ -92,12 +91,12 @@ public class GroceryListApplication {
         String name = input.getString();
         System.out.println("Please enter amount to buy: ");
         int amount = input.getInt();
-        shoppingList.add(new  groceryItems("entrees", name, amount));
+        shoppingList.add(new GroceryItems("entrees", name, amount));
     }
 
     public static void showFinalList(){
         System.out.println("Showing final shopping list.");
-        Collections.sort(shoppingList, Comparator.comparing( groceryItems::getName));
+        Collections.sort(shoppingList, Comparator.comparing( GroceryItems::getName));
         System.out.println("Fruits and Vegetables category: ");
         shoppingList.forEach(item -> {
             if(item.getCategory().equals("greens")){
